@@ -1,0 +1,9 @@
+пакеты: scipy  numpy  imageio  Pillow
+
+Win: получить пакет:
+pip install scipy
+.....
+Возможно, придется перейти в диекторию, где лежит pip.exe
+и обновить его (python -m pip install --upgrade pip)
+в Linux и Mac"
+pip3 install scipy
