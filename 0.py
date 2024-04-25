@@ -1,5 +1,5 @@
 # транспонировать матрицу изображения
-from imageio.v2 import imread, imwrite  # для Win
+#from imageio.v2 import imread, imwrite  # для Win
 
 from scipy import misc
 import numpy as np
