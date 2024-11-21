@@ -8,11 +8,10 @@ class Node{
 	public:		
 		Node(int key){this->key=key;}
 		void push(int key){
-			auto u=shared_ptr<Node>(new Node(key)); 
 			if(key<this->key&&left) {left->push(key);return;}
 			if(key>=this->key&&right) {right->push(key);return;}
-			if(key<this->key)left=u;
-			else right=u;
+			if(key<this->key)left=shared_ptr<Node>(new Node(key));
+			else right=shared_ptr<Node>(new Node(key));;
 		}
 		void pr(){
 			if(left)
