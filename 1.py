@@ -22,7 +22,7 @@ def draw(a,b):
                 im[y][x]=255,0,0
             
 im= misc.imread('1.bmp') #Linux: открыли входной bmp-файл (его можно создать в программах Paint (Win), KolorPaint (Linux)) 
-#im= imread('1.bmp') #Linux: открыли входной bmp-файл (его можно создать в программах Paint (Win), KolorPaint (Linux)) 
+#im= imread('1.bmp') #Win: открыли входной bmp-файл (его можно создать в программах Paint (Win), KolorPaint (Linux)) 
 
 h=len(im) # количество точек изображения по вертикали
 w=len(im[0]) # количество точек по горизонтали
