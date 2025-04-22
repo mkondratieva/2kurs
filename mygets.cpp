@@ -17,6 +17,7 @@ char *mygets(char *&str, size_t &LMax, FILE *in){ //на длину строки
                 char *buf=new char[LMax];
                 strcpy(buf, str);
                 delete [] str;
+		str=buf;
         }
         if(begin==0){ //сюда попадаем, только если достигнут конец файла
                 delete [] str;
