@@ -1,0 +1,147 @@
+\documentclass{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm,amsmath, amsfonts }
+
+\usepackage[dvipdfm]{graphicx}
+%если будет конвертация в pdf командой dvipdfm (но в dvi-файле картинка может быть не видна), 
+%и \usepackage{graphicx} если рисунок нужно вставить в dvi (bmp может и не вставиться)
+
+\newtheorem{defi}{Определение.}
+\newtheorem{theorem}{Теорема.}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Замечание.}
+
+\begin{document}
+
+\begin{titlepage}
+\fontsize{200pt}{150pt}
+\centerline
+{\bf   Gr\"obner}
+\vspace{1 cm}
+\centerline
+{ \bf Basis }
+%\begin{figure}[h]
+\hspace{1cm}
+\includegraphics*[width=120mm, height=60mm]{1.bmp} 
+%\end{figure}
+\vspace{1cm}
+\hspace{2cm}
+{\bf  Петрова А.А.}
+\vspace{1cm}
+\fontsize{15pt}{10pt}
+\begin{center}
+{\it Москва \\ \vspace{1cm}
+2025 }
+\end{center}
+\end{titlepage}
+
+
+\section
+{
+  Введение.
+}
+Формулировка задачи....
+
+Обсуждение....
+\begin{remark}\label{n1}
+Этот текст выплнен........
+
+$(x_1>x_2>=x_3)$
+
+\end{remark}
+
+\[
+\left\{ U_i,\  i=1,\dots,k
+\right\}=\prod_{1\le j\le n}\alpha_j| \
+{\alpha_j\notin\bold Z}
+\]
+
+\section
+{
+  Предварительные факты.
+}
+Введем ряд обозначений
+$$
+A= \left(
+\begin{array}{cc}
+1&{\fontsize{10pt}{5pt}\bf VII}\\
+5&655  \end{array}
+\right)
+$$
+.......
+
+
+\section{Основные результаты.}
+\begin{theorem}\label{Main}
+Пусть.....Тогда......
+\begin{align}\label{eq1}
+&A=1;\\ \notag
+&B=2;\\ 
+&{\mathcal A}_5={\mathcal Z}\notag
+\end{align}
+\end{theorem}
+
+
+\subsection{ Леммы и доказательство теоремы.}
+ Рассмотрим ряд лемм....
+и докажем  теорему \ref{Main}.
+\begin{proof} Рассмотрим... , 
+принимая во внимание  \cite{Jo1} и  замечание
+\ref{n1},
+можно утверждать.....
+
+\begin{enumerate}
+\item   По лемме 1....
+\item   По лемме 2 .....
+\end{enumerate}
+Следовательно,  .....и верно уравнение (\ref{eq1})
+\end{proof}
+
+\subsection{Алгоритм.}
+
+\begin{defi}
+Последовательность $\{a_n\}$ называется фундаментальной,
+если выполняется следующее:
+ $\forall\varepsilon>0\ \exists n_0=n_0(\varepsilon)$ 
+такой, что
+\(\forall m,n\in {\mathbb N}, m,n>n_0\) имеем \(|a_n-a_m|<\varepsilon\). 
+\end{defi}
+
+\begin{verbatim}
+{v_i    $
+\end{verbatim}
+
+\begin{thebibliography}{}
+\bibitem{Jac} 
+Jacobi C.G.J. 
+{\it De
+    investigando ordine systematis aequationum differentialum
+    vulgarium cujuscunque}.
+Borchardt Journal f{\"u}r die reine und angewandte Mathematik,
+ Ed. C.~W.~Borchardt. Berlin,
+    Reimer.
+N 4, LXIV (1865), p. 297-320.
+Also republ.:
+Jacobi C.G.J. 
+ {\it Gesammelte Werke}.
+V. 5      (1890),
+  p. 191-216.
+ Ed. Georg Reimer,
+Berlin.
+\bibitem{Jo1} Johnson Joseph.  {\it K\"ahler differentials and differential algebra} 
+Ann. of Math., 89 (1969), p. 92-98.
+\bibitem{Kolchin} Kolchin E.R. Differential algebra and algebraic groups. Academic Press. New York-London. 1973.
+\bibitem{Lando} Lando B. {Jacobi's bound for the order of systems of first order   differential equations. }
+Trans. Amer. Math. Soc., N 1, v. 152 (1970), p. 119-135. 
+\bibitem{Rit1} Ritt J.F. {\it Jacobi's problem on the order of systems of differential equations.} Ann. of Math., 36 (1935). p.303-312.
+\bibitem{Rit2} Ritt J.F.  {\it Differential Algebra,} volume XXXIII of
+Colloquium
+Publications. New York, American Mathematical Society, 1950.
+\bibitem{To} Tomasovic T.S. {\it A Generalized Jacobi Conjecture
+for Arbitrary Systems of Algebraic Differential Equations,} Th. D. dissertation, 
+Columbia University, 1976.
+\end{thebibliography}
+\end{document}
