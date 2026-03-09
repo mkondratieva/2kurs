@@ -31,7 +31,7 @@ struct Specialist:Person{
 	Specialist(const Person&per):Person(per){}
 	virtual void operator ++(){age++;if(age>66)throw 0;}
 };
-Student operator++(Person &z,int){Student tmp(z); ++z ; return tmp;}//постфиксный ++ не может возвратить объект родительского класса, т.к. класс абстрактный
+Specialist operator++(Person &z,int){Specialist tmp(z); ++z; return tmp;}//постфиксный ++ не может возвратить объект родительского класса, т.к. класс абстрактный
 
 struct Factory{virtual shared_ptr<Person> create()=0; //повторяет иерархию классов
 	virtual ~Factory(){}
@@ -74,7 +74,7 @@ int main(){
 	for(size_t i=0;i<count-1;i++)
 		try{*p[i]=*p[i+1]; }
 		catch(...){ 
-			p[i]=make_shared<Specialist>(p[i]->age); }
+			p[i]=make_shared<Specialist>(p[i+1]->age); }
 	*p[count-1]=*a;
 
 	Student s(0);Specialist  b(0);
