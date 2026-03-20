@@ -13,11 +13,15 @@ struct Person {
 	virtual  ~Person()=default;
 	Person(const Person &v)=default;
 	Person(Person &&)=default;
-	virtual Person & operator=(const Person &)=default;//т.к. кдасс сожержить string, копирующий оператор присваивания по умолчанию может выбрость исключение (при выхове new)
-	virtual Person & operator=(Person &&per) //default operator является npexcept, поэтому, если в Student хотим выбрасывать исключение, нужно задать явно
-	{  
+//!!если в дочерних классах оператор = не выбрасывает исключения, в базовом можно (если класс использует только контейнеры STL) определить = по умолчаниюЮ а в дочерних его не определять.
+ 
+	virtual Person & operator=(const Person &per){//т.к. класс содержить string  копирующий оператор присваивания по умолчанию может выбрость исключение (при выхове new). Но это хависит от реализации string, поэтому место default надежнее здесь явно написать перегрузку =
+  		age=per.age;name=(per.name);return *this;
+	}
+	virtual Person & operator=(Person &&per){ //default operator является noexcept, поэтому, если в Student хотим выбрасывать исключение, в Persron нужно задать явно
 		age=per.age;name=move(per.name);return *this;
 	}
+
 	static shared_ptr<Person>create(int ,shared_ptr<Factory> *);//родительский  класс ничего не знает о своих наследниках, но допускает наличие фабрик, их производящих
 };
 struct Student:Person{ 
@@ -51,7 +55,15 @@ struct Specialist:Person{
 		cout<<" Specialist  "<<age<<"\n"; 
 	}
 	Specialist(const Person&per):Person(per){}
-	Specialist(Person&&per):Person(move(per)){} 
+	Specialist(Person&&per):Person(move(per)){}
+	Person& operator =(const Person &per)override{ //иногда компилятор попросит перегрузить оператор = в каждом дочернем классе
+	        Person::operator=(per);
+        	return *this;
+	}
+	Person& operator =(Person &&per)override{ //......., т.к. присваивание по умолчанию не наследуется
+        	Person::operator=(std::move(per));
+        	return *this;
+	}
 	void operator ++()override{age++;if(age>66)throw 0;}
 };
 Specialist operator++(Person &z,int){Specialist tmp(z); ++z ; return tmp;}
