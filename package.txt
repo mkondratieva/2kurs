@@ -1,9 +1,17 @@
-пакеты: scipy  numpy  imageio  Pillow
+пакеты: scipy  numpy  imageio  
 
 Win: получить пакет:
 pip install scipy
 .....
 Возможно, придется перейти в диекторию, где лежит pip.exe
 и обновить его (python -m pip install --upgrade pip)
-в Linux и Mac"
-pip3 install scipy
+
+в Linux: 
+pip3 install imageio
+возможно, перед этим  придется обновиться и установить pip3:
+sudo apt update
+sudo apt install python3-pip
+
+В дисплейном классе придется работать без imagio, но есть numpy, scipy, для
+загрузки и сохранения изображения используйте misc
+(на замечания не обращать внимания).
