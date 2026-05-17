@@ -1,0 +1,17 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 5 5 105 105
+
+
+realtime srand
+
+1 setlinewidth
+
+10 1 50 {        % Начать с 10, шаг 1, до 50
+    /i exch def 
+    10 i add i  moveto      
+    10 i add  i 1 add lineto
+    rand 11 mod 10  div setgray
+    stroke
+} for
+
+showpage
