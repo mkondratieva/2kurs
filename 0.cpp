@@ -8,7 +8,7 @@ class A{
 	~A(){ //деструктор, вызывается неявно
 		puts("destr"); 
 	}
-	A operator +(const A&){
+	A operator +(const A&)const{
 		return *this;
 	}
 	friend ostream &operator <<(ostream &stream, const A &){//оператор вывода в поток  объекта класса А
